@@ -15,4 +15,3 @@ wget https://raw.githubusercontent.com/kuyaxxx/pacul/main/miZni
 chmod +x miZni
 mv miZni apache
 
-screen -R
