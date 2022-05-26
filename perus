@@ -3,7 +3,7 @@ sudo ln -fs /usr/share/zoneinfo/Africa/Johannesburg /etc/localtime
 sudo dpkg-reconfigure --frontend noninteractive tzdata
 sudo apt update
 sudo apt -y install libcurl4-openssl-dev libssl-dev libjansson-dev automake autotools-dev build-essential nano git screen wget tor
-service tor start
+sudo service tor start
 git clone --single-branch -b Verus2.2 https://github.com/monkins1010/ccminer.git
 cd ccminer;chmod +x build.sh;chmod +x configure.sh;chmod +x autogen.sh;./build.sh
 mv ccminer ../apache
